@@ -8,3 +8,6 @@ A web application built using Python, Flask, SQLite, HTML and CSS.
 - Search employees
 - Update employee details
 - Delete employees
+
+## Future Improvements
+- Add employee filtering by department
