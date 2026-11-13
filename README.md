@@ -1,6 +1,6 @@
 # Employee Management System
 
-A web application built using Python, Flask, SQLite, HTML, CSS and AWS.
+A web application built using Python, Flask, SQLite, HTML, CSS, Docker and AWS.
 
 ## Features
 - Add employees
