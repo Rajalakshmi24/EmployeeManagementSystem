@@ -1,11 +1,13 @@
 from flask import Flask, request, render_template, flash, redirect, url_for
 import sqlite3
+import os
 
 app = Flask(__name__)
 app.secret_key = "employee-management-secret-key"
+DB_PATH = os.environ.get("DATABASE_PATH", "employees.db")
 
 def get_db_connection():
-    conn = sqlite3.connect("employees.db")
+    conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -144,4 +146,4 @@ def delete_employee(employee_id):
         conn.close()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)

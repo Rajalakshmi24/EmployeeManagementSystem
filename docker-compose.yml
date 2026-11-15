@@ -1,0 +1,24 @@
+services:
+  web:
+    build: .
+    container_name: employee-app
+    expose:
+      - "5000"
+    environment:
+      DATABASE_PATH: /data/employees.db
+    volumes:
+      - employee-data:/data
+
+  nginx:
+    image: nginx:latest
+    container_name: employee-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - web
+
+volumes:
+  employee-data:
+    external: true
