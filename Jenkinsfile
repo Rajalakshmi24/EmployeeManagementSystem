@@ -2,13 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                echo 'Checking out EmployeeManagementSystem'
-                checkout scm
-            }
-        }
-
+        
         stage('Python Version') {
             steps {
                 sh 'python3 --version'
