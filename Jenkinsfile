@@ -22,5 +22,11 @@ pipeline {
                 echo 'Python syntax validation successful!'
             }
         }
+
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t employee-management-app .'
+            }
+        }
     }
 }
